@@ -46,3 +46,8 @@ store.dispatch({
   payload: { amount: 1000, purpose: "Buy a car" },
 });
 console.log(store.getState());
+store.dispatch({
+  type: "account/payLoan",
+  // payload: { amount: 1000, purpose: "Buy a car" },
+});
+console.log(store.getState());
