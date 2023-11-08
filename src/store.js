@@ -16,6 +16,13 @@ function reducer(state = initialState, action) {
       // LATER
       return { ...state, loan: action.payload };
 
+    case "account/payLoan":
+      return {
+        ...state,
+        loan: 0,
+        loanPurpose: "",
+        balance: state.balance - state.loan,
+      };
     default:
       return state;
   }
