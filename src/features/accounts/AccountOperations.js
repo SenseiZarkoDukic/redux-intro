@@ -14,6 +14,7 @@ function AccountOperations() {
     balance,
     loan: currentLoan,
     loanPurpose: currentLoanPurpose,
+    isLoading,
   } = useSelector((store) => store.account);
   console.log(balance);
 
@@ -61,7 +62,9 @@ function AccountOperations() {
             <option value="GBP">British Pound</option>
           </select>
 
-          <button onClick={handleDeposit}>Deposit {depositAmount}</button>
+          <button onClick={handleDeposit} disabled={isLoading}>
+            Deposit {depositAmount}
+          </button>
         </div>
 
         <div>
