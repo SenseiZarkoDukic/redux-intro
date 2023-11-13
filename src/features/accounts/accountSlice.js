@@ -33,9 +33,9 @@ const accountSlice = createSlice({
         state.balance += action.payload.amount;
       },
       payLoan(state, action) {
+        state.balance -= state.loan;
         state.loan = 0;
         state.loanPurpose = "";
-        state.balance -= state.loan;
       },
     },
   },
@@ -44,8 +44,6 @@ const accountSlice = createSlice({
 console.log(accountSlice);
 
 export const { deposit, withdraw, requestLoan, payLoan } = accountSlice.actions;
-
-console.log(requestLoan(1000, "buying a car"));
 
 export default accountSlice.reducer;
 
