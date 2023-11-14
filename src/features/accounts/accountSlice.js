@@ -26,17 +26,18 @@ const accountSlice = createSlice({
           },
         };
       },
+
       reducer(state, action) {
         if (state.loan > 0) return;
         state.loan = action.payload.amount;
         state.loanPurpose = action.payload.purpose;
         state.balance += action.payload.amount;
       },
-      payLoan(state, action) {
-        state.balance -= state.loan;
-        state.loan = 0;
-        state.loanPurpose = "";
-      },
+    },
+    payLoan(state, action) {
+      state.balance -= state.loan;
+      state.loan = 0;
+      state.loanPurpose = "";
     },
   },
 });
