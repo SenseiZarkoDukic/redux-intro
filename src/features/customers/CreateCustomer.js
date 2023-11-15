@@ -28,14 +28,14 @@ function Customer() {
         <div>
           <label>Customer full name</label>
           <input
-            value={userName}
+            value={fullName}
             onChange={(e) => setFullName(e.target.value)}
           />
         </div>
         <div>
           <label>National ID</label>
           <input
-            value={natId}
+            value={nationalId}
             onChange={(e) => setNationalId(e.target.value)}
           />
         </div>
