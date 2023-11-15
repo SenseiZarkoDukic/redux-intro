@@ -10,7 +10,7 @@ const customerSlice = createSlice({
   name: "customer",
   initialState,
   reducers: {
-    create: {
+    createCustomer: {
       prepare(fullName, nationalID) {
         return {
           payload: {
@@ -27,14 +27,14 @@ const customerSlice = createSlice({
         state.createdAt = action.payload.createdAt;
       },
     },
-  },
-  updateName(state, action) {
-    state.fullName = action.payload;
+    updateName(state, action) {
+      state.fullName = action.payload;
+    },
   },
 });
 console.log(customerSlice);
 
-export const { create } = customerSlice.actions;
+export const { createCustomer, updateName } = customerSlice.actions;
 
 export default customerSlice.reducer;
 
